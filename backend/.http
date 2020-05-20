@@ -1,0 +1,50 @@
+@url = http://localhost:3001/api
+@type = Content-Type: application/json
+
+### 注册
+POST {{ url }}/user/register HTTP/1.1
+{{ type }}
+
+{
+    "username": "admin3",
+    "password": "123456"
+}
+
+### 登录
+POST {{ url }}/user/login HTTP/1.1
+{{ type }}
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+### 邮箱验证码
+POST {{ url }}/user/emailCode HTTP/1.1
+{{ type }}
+
+{
+    "username": "admin3"
+}
+
+##########  标题列表  ##########
+
+### 拉取列表
+GET {{ url }}/directory HTTP/1.1
+
+### 增加
+POST {{ url }}/directory/addFirstTitle HTTP/1.1
+{{ type }}
+
+{
+    "title": "一是哥了放假大概快乐十分的1",
+    "isArticle": false
+}
+
+### 删除
+POST {{ url }}/directory/deleteOneTitle HTTP/1.1
+{{ type }}
+
+{
+    "id": "5e943131c3b275a7848e194b"
+}
