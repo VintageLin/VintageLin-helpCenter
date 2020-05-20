@@ -8,6 +8,7 @@
         @ready="onEditorReady($event)">
     </quill-editor>
     <a-upload
+      v-show="false"
       ref="uploadComp"
       name="image"
       accept="image/*"
@@ -19,6 +20,7 @@
     >
       <a-button ref="uploadComp">上传图片</a-button>
     </a-upload>
+    <p>暂无上传视频功能</p>
     <template slot="footer">
       <a-button key="back" :loading="isSubmitting" @click="handleCancel">取消</a-button>
       <a-button key="submit" type="primary" :loading="isSubmitting" class="ml20" @click="handleOk">确认</a-button>
@@ -86,8 +88,7 @@ export default {
             content: res.msg
           })
         }
-      }).catch((err) => {
-        console.log(err)
+      }).catch(() => {
         this.$error({
           title: '错误',
           content: '网络错误，请稍后再试',
@@ -187,7 +188,6 @@ export default {
       this.$emit('cancel', false)
     },
     handleUploadChange (info) {
-      console.log(info)
       if (info.file.status === 'uploading') {
         this.isUploading = true
         return
@@ -211,7 +211,6 @@ export default {
       }
     },
     imgUploadHandler (state) {
-      console.log(this.$refs.uploadComp)
       this.addRange = this.editor.getSelection()
       document.querySelector('.ant-upload').querySelector('.ant-upload').children[0].click()
       // if (state) {
