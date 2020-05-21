@@ -1,4 +1,4 @@
 # helpCenter
 `helpCenter 翻译过来就是帮助中心，是由目前公司app里面内嵌H5页面重新打造的，因为原来的项目里面，并无后端服务，所有数据由前端保存，这就导致每次新增内容都需要重新打包一次。目前把它作为一个自己练习前后端服务的项目。`
 
-`后端服务里面的 config/constant_empty.js ，在使用时需要把 _empty 这个删除掉`
+`后端服务里面的 config/constant_empty.js ，在使用时需要把 _empty 这个删除掉，然后填入相关参数`
