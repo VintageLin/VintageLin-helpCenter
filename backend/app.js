@@ -11,6 +11,7 @@ const errorHandler = require('./middleware/error')
 const user = require('./routes/user')
 const directory = require('./routes/directory')
 const article = require('./routes/article')
+const toUserEnd = require('./routes/toUserEnd')
 /* 路由引入 end */
 
 const app = new Koa()
@@ -40,6 +41,7 @@ app.use(koabody({
 app.use(user.routes(), user.allowedMethods())
 app.use(directory.routes(), directory.allowedMethods())
 app.use(article.routes(), article.allowedMethods())
+app.use(toUserEnd.routes(), toUserEnd.allowedMethods())
 app.use(errorHandler)
 
 app.listen(CONSTANT.PORT, () => {

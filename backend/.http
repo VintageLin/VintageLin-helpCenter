@@ -48,3 +48,20 @@ POST {{ url }}/directory/deleteOneTitle HTTP/1.1
 {
     "id": "5e943131c3b275a7848e194b"
 }
+
+
+
+@user = http://localhost:3001
+### 用户端：列表拉取
+GET {{ user }}/list HTTP/1.1
+
+{
+    "id": null
+}
+
+### 用户端：文章拉取
+GET {{ user }}/article HTTP/1.1
+
+{
+    "id": "5ec24ead794e999340c29fab"
+}

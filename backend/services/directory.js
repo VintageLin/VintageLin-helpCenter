@@ -1,6 +1,6 @@
 const Directory = require('../models/directory')
 const mongoose = require('mongoose')
-const ObjectId = mongoose.Types.ObjectId;
+const ObjectId = mongoose.Types.ObjectId
 // 返回的字段
 const listDataConfig = {
     _id: 1,
