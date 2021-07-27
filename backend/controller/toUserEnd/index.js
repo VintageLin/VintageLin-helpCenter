@@ -26,7 +26,6 @@ async function getList(ctx) {
 async function getArticle (ctx) {
     console.log(chalk.bgWhiteBright('用户端拉取文章'))
     const { id } = ctx.request.query
-    
     const article = await getArticleById({ id })
     if (article) {
         return ctx.body = {

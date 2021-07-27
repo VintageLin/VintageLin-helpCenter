@@ -14,6 +14,9 @@ class Article extends Component {
         return (
             <div className={ styles.wrapper }>
                 <SubHeader />
+                <div className={ styles.content }>
+                    
+                </div>
                 <SubBottom />
             </div>
         );
